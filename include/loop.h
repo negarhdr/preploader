@@ -1,7 +1,6 @@
 #ifndef LOOP_H_INCLUDED
 #define LOOP_H_INCLUDED 1
 
-#include <parasolid.h>
 #include "types.h"
 #include <assert.h>
 #include <Eigen/Core>
@@ -28,14 +27,6 @@ struct Loop {
     Eigen::Vector3d na_bb_x;
     Eigen::Vector3d na_bb_z;
     Eigen::MatrixXd na_bounding_box;
-};
-
-struct PSLoop: public Loop {
-    PSLoop(int id, std::string export_id);
-
-    std::vector<Inference> get_inferences() override;
-
-    int _id;
 };
 
 struct OCCTLoop: public Loop {
